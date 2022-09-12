@@ -2,13 +2,13 @@ FROM mjgargani/puppeteer:trybe1.0
 
 WORKDIR /usr/src/app
 
-ADD ./node_modules.tar.gz /usr/src/app
+ADD ./node_modules.tar.gz ./
 
-COPY package*.json /usr/src/app
+COPY package*.json .
 
 RUN npm install
 
-COPY . /usr/src/app
+COPY . .
 
 CMD ["npm", "test"]
 
