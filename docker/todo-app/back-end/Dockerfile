@@ -1,12 +1,14 @@
 FROM node:14
 
-ADD ./node_modules.tar.gz ./
+WORKDIR /usr/src/app
 
-COPY package*.json .
+ADD ./node_modules.tar.gz /usr/src/app
+
+COPY package*.json /usr/src/app
 
 RUN npm install
 
-COPY . .
+COPY . /usr/src/app
 
 EXPOSE 3001
 
